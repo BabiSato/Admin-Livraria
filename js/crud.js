@@ -182,7 +182,11 @@ botaoSalvar.addEventListener('click', function(){
     let dados = getDadosForm()
 
     if(dados){
-        postLivro(dados)
+        if(document.getElementById('salvar').innerText == 'Salvar'){
+            postLivro(dados)
+        }else if(document.getElementById('salvar').innerText == 'Atualizar'){
+            putLivro(dados)
+        }
     }
 })
 
